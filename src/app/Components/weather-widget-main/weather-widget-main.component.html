@@ -1,0 +1,38 @@
+
+<div id="divWeatherMain"> 
+    <div class="header">
+        <div>
+            Home
+        </div>
+        <div [routerLink]="['/aboutus']">
+            About Us
+        </div>
+        <div [routerLink]="['/ourservices']">
+            Our Services
+        </div>
+        <div [routerLink]="['/ourcustomers']">
+            Our Customers
+        </div>
+    </div>
+    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;"><h1><i>Welcome to</i>  Weather App</h1></div>
+    <div >
+        <div *ngIf="WeatherData.isDay" class="weatherWidgetRow" style="font-size:20px">
+            <i class="fas fa-3x fa-sun sun"></i>  
+        </div>   
+        <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow" style="font-size:20px">
+            <i class="fas fa-3x fa-moon moon"></i>  
+        </div>   
+        <div class="weatherWidgetRow cloudDiv" style="font-size:20px">
+            <i class="fas fa-cloud fa-3x cloud"></i>
+        </div>
+    
+    </div>
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 10px;">{{WeatherData.temp_celcius}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{WeatherData.temp_feels_like}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{WeatherData.name}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Humidity: {{WeatherData.main.humidity}}%</div>
+    <div class="weatherWidgetRow" style="font-size: 20px;margin-top: 1px;"><h5>Today's Date:  {{today | date:'yyyy-LL-dd'}}</h5></div>
+    <div class="weatherWidgetRow" style="font-size: 20px;margin-top: 1px;"><h5>Current Time:  {{today | date:'HH:mm:ss'}}</h5></div>
+    
+</div>
